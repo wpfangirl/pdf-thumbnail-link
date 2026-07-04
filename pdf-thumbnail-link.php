@@ -40,7 +40,12 @@ function wpfangirl_pdf_block_check_update( $update, array $plugin_data, string $
     $json_url = 'https://raw.githubusercontent.com/wpfangirl/pdf-thumbnail-link/refs/heads/main/update.json';
 
     // Fetch the JSON data from GitHub
-    $response = wp_remote_get( $json_url, array( 'timeout' => 10 ) );
+    $response = wp_remote_get( $json_url, array( 
+        'timeout'    => 10,
+        'headers'    => array(
+            'User-Agent' => 'WordPress/' . get_bloginfo( 'version' ) . '; ' . get_home_url()
+        )
+    ) );
     if ( is_wp_error( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) ) {
         return $update;
     }
@@ -98,8 +103,22 @@ function wpfangirl_pdf_block_fix_github_folder( $source, $remote_source, $upgrad
     return $source;
 }
 
+/* =====================================================================================================
+   3. Force WordPress to pass a valid User-Agent header when downloading the ZIP archive bundle from GitHub
+   ===================================================================================================== */
+add_filter( 'http_request_args', 'wpfangirl_pdf_block_update_download_headers', 10, 2 );
+/**
+ * Injects a compliant User-Agent string to pass GitHub's automated download security firewall.
+ */
+function wpfangirl_pdf_block_update_download_headers( $args, $url ) {
+    if ( strpos( $url, '://github.com' ) !== false ) {
+        $args['headers']['User-Agent'] = 'WordPress/' . get_bloginfo( 'version' ) . '; ' . get_home_url();
+    }
+    return $args;
+}
+
 /* ==========================================================================
-   Register the block using the metadata defined in the block.json file.
+   4. Register the block using the metadata defined in the block.json file.
    ========================================================================== */
 
 function wpf_pdf_thumbnail_block_init() {
