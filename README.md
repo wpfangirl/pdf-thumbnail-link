@@ -5,7 +5,7 @@ Tags: pdf, thumbnail, media, block, accessibility, gutenberg
 Requires at least: 6.5  
 Tested up to: 7.0  
 Requires PHP: 7.4  
-Stable tag: 1.4.3  
+Stable tag: 1.5.0  
 License: GPL-2.0+  
 License URI: https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -43,7 +43,11 @@ The **PDF Thumbnail Link Block** is perfect for resource libraries, newsletters,
 ### A frontend preview of a single PDF Thumbnail Link block with caption and download button.
 ![Frontend Block Preview with Caption](assets/screenshot-3.png)
 
-## Changelog 
+## Changelog
+
+### [1.5.0] - 2026-07-04
+- Added: Native automatic update capabilities hosted directly via GitHub (`pdf-thumbnail-link.php`).
+- Created `update.json` file to manage remote release distribution.
 ### 1.4.3
 * Changed: Linked h3 block titles directly to the underlying PDF asset file.
 * Changed: Added native `.wp-caption-text` layout hook classes to front-end paragraph rendering.
@@ -62,5 +66,5 @@ The **PDF Thumbnail Link Block** is perfect for resource libraries, newsletters,
 
 ## Upgrade Notice
 
-= 1.4.3 =
-This update adds direct link wrappers to headings and ensures optimal theme style inheritance for captions. Highly recommended for grid layouts.
+= 1.5.0 =
+This update adds automatic updates via GitHub.

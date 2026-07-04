@@ -2,6 +2,11 @@
 
 All notable changes to the **PDF Thumbnail Link Block** plugin will be documented in this file.
 
+## [1.5.0] - 2026-07-04
+### Added
+- Native automatic update capabilities hosted directly via GitHub.
+- `update.json` file to manage remote release distribution.
+
 ## [1.4.3] - 2026-06-28
 ### Changed
 - Modified frontend `render.php` markup to wrap the `h3` block title in a direct link to the PDF.
