@@ -2,7 +2,7 @@
     "name": "PDF Thumbnail Link Block",
     "slug": "pdf-thumbnail-link",
     "version": "1.5.0",
-    "download_url": "https://github.com/wpfangirl/pdf-thumbnail-link/",
+    "download_url": "https://github.com/wpfangirl/pdf-thumbnail-link/archive/refs/heads/main.zip",
     "sections": {
         "description": "Automatically generates visual thumbnail links for your uploaded PDF documents.",
         "changelog": "<h4>1.5.0</h4><ul><li>Added native GitHub-hosted automatic update capabilities.</li></ul>"
