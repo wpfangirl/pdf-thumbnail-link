@@ -1,14 +1,16 @@
 <?php
 /**
- * Plugin Name:       PDF Thumbnail Link Block
- * Description:       A native WordPress block to display an accessible thumbnail linking to a PDF document with custom text, layout toggles, and forced download button options.
- * Version:           1.4.3 
- * Author:            WPFangirl
- * Text Domain:       pdf-thumbnail-link
- * License:           GPL-2.0+
+ * Plugin Name: PDF Thumbnail Link Block
+ * Plugin URI: https://github.com/wpfangirl/pdf-thumbnail-link-block
+ * Description: A native WordPress block to display an accessible thumbnail linking to a PDF document with custom link text, layout toggles, and forced download button options.
+ * Version: 1.4.3 
+ * Author: WP Fangirl
+ * Author URI: https://www.wpfangirl.com
+ * Text Domain: pdf-thumbnail-link
+ * License: GPL-2.0+
  * Requires at least: 6.5
  * Tested up to: 7.0
- * Requires PHP:      7.4
+ * Requires PHP: 7.4
  */
 
 // Exit if accessed directly.
