@@ -37,7 +37,7 @@ function wpfangirl_pdf_block_check_update( $update, array $plugin_data, string $
     }
 
     // URL to your public raw JSON file on GitHub
-    $json_url = 'https://githubusercontent.com';
+    $json_url = 'https://githubusercontent.com/wpfangirl/pdf-thumbnail-link/main/update.json';
 
     // Fetch the JSON data from GitHub
     $response = wp_remote_get( $json_url, array( 'timeout' => 10 ) );
