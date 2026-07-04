@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: PDF Thumbnail Link Block
- * Plugin URI: https://github.com/wpfangirl/pdf-thumbnail-link-block
+ * Plugin URI: https://github.com/wpfangirl/pdf-thumbnail-link
  * Description: A native WordPress block to display an accessible thumbnail linking to a PDF document with custom link text, layout toggles, and forced download button options. Automatic updates via GitHub.
  * Version: 1.5.0 
  * Requires at least: 6.5
@@ -12,7 +12,7 @@
  * License: GPL-2.0+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: pdf-thumbnail-link
- * Update URI: https://github.com/wpfangirl/pdf-thumbnail-link-block
+ * Update URI: https://github.com/wpfangirl/pdf-thumbnail-link
  */
 
 // Exit if accessed directly.
@@ -32,7 +32,7 @@ add_filter( 'update_plugins_github.com', 'wpfangirl_pdf_block_check_update', 10,
  */
 function wpfangirl_pdf_block_check_update( $update, array $plugin_data, string $plugin_file, $locales ) {
     // Ensure we only run this for our specific plugin folder and main file
-    if ( 'pdf-thumbnail-link-block/pdf-thumbnail-link.php' !== $plugin_file ) {
+    if ( 'pdf-thumbnail-link/pdf-thumbnail-link.php' !== $plugin_file ) {
         return $update;
     }
 
@@ -77,12 +77,12 @@ add_filter( 'upgrader_source_selection', 'wpfangirl_pdf_block_fix_github_folder'
  */
 function wpfangirl_pdf_block_fix_github_folder( $source, $remote_source, $upgrader, $hook_extra ) {
     // Only target our specific plugin update
-    if ( ! isset( $hook_extra['plugin'] ) || 'pdf-thumbnail-link-block/pdf-thumbnail-link.php' !== $hook_extra['plugin'] ) {
+    if ( ! isset( $hook_extra['plugin'] ) || 'pdf-thumbnail-link/pdf-thumbnail-link.php' !== $hook_extra['plugin'] ) {
         return $source;
     }
 
     // Define the correct, clean target folder path
-    $correct_folder_name = 'pdf-thumbnail-link-block';
+    $correct_folder_name = 'pdf-thumbnail-link';
     $corrected_source = trailingslashit( $remote_source ) . $correct_folder_name;
 
     // If the directory already matches the correct name, do nothing
